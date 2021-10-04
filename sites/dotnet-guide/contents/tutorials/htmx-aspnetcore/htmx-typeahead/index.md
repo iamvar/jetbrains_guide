@@ -1,7 +1,7 @@
 ---
 type: TutorialStep
 date: 2021-09-29
-title: Search as You Type with HTMX
+title: Typeahead Search with HTMX
 technologies: [.net, asp.net]
 products: [rider,resharper]
 topics: [data,web,editing,inspections]
@@ -13,11 +13,13 @@ poster: ./thumbnail.png
 url:
 ---
 
-Search as you type is a mainstay of a modern user interface and a baseline feature most users expect.  While this search sample is more complex than previous examples, it's pretty easy to break down and implement.
+Search as you type is a user-expected staple of a modern user interface. You enter a few characters, to see the matching results so far. In this section, we'll implement a seemingly complex UX pattern, but as you'll see it's pretty straightforward to build with HTMX. While we're using an in-memory collection here, you can substitute your favorite backend search engine technology: Elasticsearch, RediSearch, or PostgreSQL.
 
-Given we have a search textbox, we want to pass the contents of our textbox and return results from our server. We'll be using familiar HTMX attributes of `hx-get` and `hx-target`, along with new attributes `hx-trigger` and `hx-indicator` to complete this solution. We'll also be reusing our search results table by refactoring it into a partial view, a common technique you'll become familiar with as you use HTMX more.
+Our initial experience starts with a humble text box. We want to pass the value of our text box to our server-based search implementation and return the relevant results. Remember, HTMX expects HTML elements in our response. This gives us an opportunity to process search results and render the response as needed. We'll be using, the familiar at this point, HTMX attributes of `hx-get` and `hx-target`, along with new attributes `hx-trigger` and `hx-indicator` to complete this solution. A new technique up to this point, We'll also be reusing our search results table by refactoring it into an ASP.NET Core partial view. As you use HTMX and ASP.NET Core in tandem, you'll utilize partial views more, and it will become a common technique. The table of results in the following image is stored in a partial view named `_Results.cshtml`.
 
-The first step is to decorate our `input` element with the necessary HTMX attributes.
+![The search UI using HTMX and ASP.NET Core](img.png)
+
+Given our initial UI, the first step is to decorate our search `input` element with the necessary HTMX attributes of `hx-get`, `hx-target`, `hx-trigger`, and `hx-indicator`.
 
 ```html
 <input type="text"
@@ -34,7 +36,7 @@ The first step is to decorate our `input` element with the necessary HTMX attrib
        aria-describedby="search-addon">
 ```
 
-The most notable attribute in this collection is `hx-trigger`. The default trigger for input elements is `change`, but we have changed it to delay the event by `250ms`. Thus, every keystroke resets the change event timer, giving us debounce behavior, limiting the number of requests we issue to the server. Next, let's look at our serverside implementation.
+The most notable attribute in this collection is `hx-trigger`. The default trigger for input elements is `change`, but we have set the trigger to `keyup changed delay:250ms` . HTMX will only trigger the `change` event only if the last keystroke occurs in over 250 milliseconds. A `keyup` event resets the timer, giving us debounce behavior, allowing us to limit the number of requests we issue to the server. Next, let's look at our serverside implementation.
 
 ```c#
 public IActionResult OnGet()
@@ -58,11 +60,11 @@ public IActionResult OnGet()
 
 There are a few notable elements in the C# method:
 
-1. The page will work with and without HTMX, making our page shareable.
-1. We push an HTMX header to change the URL of our current page.
+1. The page will work with and without HTMX, making our page shareable with friends.
+1. We set an HTMX header to change the URL of our current page, allowing us to maintain client state.
 1. We utilize the same `_Results` partial used on initial page load.
 
-Now let's look at the contents of our partial view. How complicated is it?
+We mentioned previously that partials are an important tool when building HTMX-powered applications. It allows us to reuse layout in HTTP and HTMX requests. Now let's look at the contents of our partial view. How complicated can it be?
 
 ```html
 @model Exercises.Pages.Search
@@ -88,8 +90,10 @@ else
 }
 ```
 
-Wow! Not complicated at all! It's the same Razor syntax we know and love. In this case, we're even able to use the same `PageModel` that informs our initial page load. Let's test it out!
+Wow! Not complicated at all! It's the same Razor syntax we know and love. In this case, we're even able to use the same `PageModel` that informs our initial page load. One of HTMX's greatest strengths' comes from an intended side effect: The ability to use our favorite server-side rendering technologies to support client-side experiences. In the case of ASP.NET Core devs, using the Razor View Engine to its fullest capabilities. Let's test out the sample!
 
-Typing in the input, we see the results, and the URL in our browser change whenever we stop typing—a fantastic progressive enhancement with a few HTMX attributes and reworking of our C# code.
+![Working sample running search](img_1.png)
 
-In the following video, we'll explore infinite scrolling patterns with HTMX and ASP.NET Core.
+We can see the relevant results by typing a known value into the search input. We can also see the URL in our browser change whenever we stop typing a value—a fantastic progressive enhancement with a few HTMX attributes and reworking of our C# code. The experience we've built allows for both a realized client-side experience, and a shareable experience ideal for social media, search engines, and more.
+
+Speaking of social media, In the following video, we'll explore infinite scrolling patterns with HTMX and ASP.NET Core, a pattern commonly used on social media sites.

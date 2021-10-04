@@ -13,9 +13,15 @@ poster: ./thumbnail.png
 url:
 ---
 
-Modals are a powerful way to capture a user's attention when you're acknowledging an action. We'll recreate a typical newsletter signup form with a follow-up modal confirmation to display our user's input in this example. This sample requires a little more JavaScript than our previous work, but it's an excellent introduction to the events made available by HTMX. Events give us opportunities to execute JavaScript before, during, or after an HTMX request. In this case, we'll be easing our modal into view with some optional JavaScript.
+Modals are a powerful way to get a user's attention when you're acknowledging their action. A modal typically contains the most important information represented with a sense of urgency. If you're a modal fan, we'll recreate a typical newsletter signup form with a follow-up modal confirmation to display our user's input, in this case, their email address. In true HTMX fashion, we'll be generating our modal server-side.
 
-This time, unlike our previous samples, we'll be leveling up an existing HTML form with HTMX. By design, any input within an HTMX form will be included as a parameter on the HTTP request. So first, let's take a look at the HTML that will trigger our modal.
+Note, this sample requires a bit of JavaScript compared to our previous work, but it's an excellent introduction to the events made available by HTMX. [Events](https://htmx.org/reference/#events) give us opportunities to execute JavaScript before, during, or after an HTMX request. In this case, we'll be easing our modal into view with some optional JavaScript. You could forgo the JavaScript for an immediate modal experience.
+
+This time, unlike our previous samples where we added HTMX attributes to individual elements, we'll be leveling up an HTML form with several inputs. By design, any input within an HTMX form will be included as a parameter on the subsequent HTTP request. 
+
+![HTML Form rendered on page](img_1.png)
+
+So first, let's take a look at the HTML that will trigger our modal. In our newsletter form, the subscribe button will submit all of our user's information.
 
 ```html
 <div class="card m-5">
@@ -44,9 +50,9 @@ This time, unlike our previous samples, we'll be leveling up an existing HTML fo
 </div>
 ```
 
-When the form completes a request, we'll receive an HTML response powered by this Razor partial.
+When the user submits the form, we'll receive an HTML response powered by the following Razor partial.
 
-```
+```html
 @model Exercises.Pages.NewsletterSignup
 @{ ArgumentNullException.ThrowIfNull(Model); }
 
@@ -90,9 +96,11 @@ newsletter.addEventListener('htmx:afterOnLoad', () => {
 A few things to note about this event handler:
 
 1. The event handler is added to the newsletter form, which will trigger when the form is submitted.
-1. The HTML response is placed on the page but is invisible due to the lack of a `show` class. After adding the HTML, we toggle the `show` class after a `10ms` timeout.
-1. It's vanilla JavaScript and optional at that.
+1. The HTML response is placed on the page but is invisible due to the lack of a `show` class. After adding the HTML, we toggle the `show` class after a `10ms` timeout. The timeout is an arbitrary time meant to give HTMX time to settle the HTML into the DOM.
+1. It's all optional vanilla JavaScript meant to enhance the experience with animation.
 
 When we enter an email address into the signup form, we get a modal that slides into view. Again, a smooth server-side powered experience brought to you by HTMX and a bit of JavaScript.
 
-In the next section, we'll see how to implement tabs.
+![Modal and submission form in the background](img.png)
+
+In the next section, we'll see how to implement server-powered tabs. It's an interesting way to implement the common pattern.

@@ -13,9 +13,11 @@ poster: ./thumbnail.png
 url:
 ---
 
-HTMX works on the philosophy of **[Locality of Behavior](https://htmx.org/essays/locality-of-behaviour/)**. Adopting this philosophy means we will define HTMX definitions and the ultimate result of behavior are as close to each other as possible. The more relative everything is, the more decipherable our application is to developers needing to maintain and adapt our codebase.
+HTMX works on the philosophy of **[Locality of Behavior](https://htmx.org/essays/locality-of-behaviour/)**. Adopting this philosophy means we will define HTMX definitions and the result of the behavior as close to each other as possible. The more relative everything is, the more decipherable our application is to developers needing to maintain and adapt our codebase.
 
 In general, it is easy to adhere to this philosophy, but there's always an exception to a rule. For example, an everyday use case where we break this rule is when dealing with an application shell. A shopping site is a good example, where a global shopping item indicator displays the number of items contained within the cart. Adding an item to our cart will increment the display with the latest total item count; removing an item will reduce the count. So how can we implement this user experience using HTMX?
+
+![Shopping cart example](img.png)
 
 Since application shells are typically unique elements on the page, we can add identifiers to specific HTML elements using the `id` attribute. So, we have a cart button with an `id` of `cartNavbar` in our example.
 
@@ -58,7 +60,7 @@ HTMX can process responses before placing them into our target element. Therefor
 </div>
 ```
 
-You may be asking, "Why is out-of-band swapping a dark art?" Adding multiple HTML elements to a single request can become an overwhelming architectural task on the server. In addition, extra HTML elements may need further resources from database calls, third-party services, or other dependencies. So, in general, use this technique sparingly, as it can get out of control quickly. For ASP.NET Core users, we can take advantage of MVC Filters, View Components, and TagHelpers to isolate application shell elements without adding to the complexity of our endpoints. Be aware, as a word of general advice, hiding complexity does not remove its cost. Just because you can't see it doesn't mean it is not there.
+You may be asking, "Why is out-of-band swapping a dark art?" Adding multiple HTML elements to a single request can become an overwhelming architectural task on the server. In addition, extra HTML elements may need further resources from database calls, third-party services, or other dependencies. So, in general, use this technique sparingly, as it can get out of control quickly. For ASP.NET Core users, we can take advantage of MVC Filters, View Components, and TagHelpers to isolate application shell elements without adding to the complexity of our endpoints. Be aware, as a word of general advice, hiding complexity does not remove its cost. Just because you can't see it, it doesn't mean it is not there.
 
 Other techniques to avoid out-of-band swaps might be to use the `HX-Trigger` HTTP header on responses, which will force all elements subscribed to that event to refresh themselves.
 

@@ -15,16 +15,16 @@ url:
 
 HTMX recognizes that some development teams have likely invested substantially in building JSON over HTTP APIs, whether it's REST or GraphQL. Rather than rebuilding a backend that serves HTML exclusively, developers might find themselves in a situation where they need to call multiple backends providing different functionality. Therefore, when working with JSON on the client, we first need to choose a templating language.
 
-HTMX has extension support for the following client-side templating languages: [Mustache](), [Nunjucks](), and [Handlebars](). In the example in this section, we'll be using Mustache. To enable HTMX and client-side templating, we need to include the following JavaScript assets on the page.
+HTMX has extension support for the following client-side templating languages: [Mustache](https://github.com/janl/mustache.js/), [Nunjucks](https://mozilla.github.io/nunjucks/), and [Handlebars](https://handlebarsjs.com/). In the example in this section, we'll be using Mustache. To enable HTMX and client-side templating, we need to include the following JavaScript assets on the page.
 
 ```html
 <script src="~/js/extra/client-side-templates.js"></script>
 <script src="~/js/extra/mustache.js"></script>
 ```
 
-We then need to define our HTML block with three essential parts:
+We then need to define our HTML element with three essential parts:
 
-1. A call to `hx-ext`, which opts our HTML block into utilizing a known HTMX extension.
+1. A call to `hx-ext`, which opts our HTML element into utilizing a known HTMX extension.
 1. We set the attribute of `mustache-template` to our template identifier on our HTMX-powered element.
 1. We create a `template` element with a Mustache template within the bounds of our HTML tag.
 
