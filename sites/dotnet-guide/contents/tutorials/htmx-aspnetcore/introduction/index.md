@@ -13,8 +13,6 @@ poster: ./thumbnail.png
 url: 
 ---
 
-## Introduction
-
 At the end of the day, There's no better feeling than delivering a great user experience to your users. But, unfortunately, what's not fun in the current web development landscape is choosing a frontend library, setting up a build and asset pipeline, and going all in with an unfamiliar set of tools. Reworking an existing UI approach can be time-consuming and come with a set of yet-to-be-discovered problems.
 
 What if you could use your existing ASP.NET Core knowledge to build immersive client experiences and avoid the headaches of complicated frontend frameworks? Well you can! This video series is for you, whether you're an experienced ASP.NET Core web developer looking to recapture the nostalgia of "getting stuff done" or new to ASP.NET Core feeling overwhelmed by learning both frontend and backend stacks.

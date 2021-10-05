@@ -6,7 +6,7 @@ technologies: [.net, asp.net]
 products: [rider,resharper]
 topics: [data,web,editing,inspections]
 author: khalidabuhakmeh
-subtitle: Giving context to HTMX
+subtitle: One thing leads to another
 thumbnail: ./thumbnail.png
 longVideo:
 poster: ./thumbnail.png

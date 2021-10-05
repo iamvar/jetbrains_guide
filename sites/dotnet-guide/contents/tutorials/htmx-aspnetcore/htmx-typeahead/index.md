@@ -6,7 +6,7 @@ technologies: [.net, asp.net]
 products: [rider,resharper]
 topics: [data,web,editing,inspections]
 author: khalidabuhakmeh
-subtitle: Giving context to HTMX
+subtitle: Results Returned at Every Key Press
 thumbnail: ./thumbnail.png
 longVideo:
 poster: ./thumbnail.png

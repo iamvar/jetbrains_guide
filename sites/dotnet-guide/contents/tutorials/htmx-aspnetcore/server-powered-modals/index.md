@@ -6,7 +6,7 @@ technologies: [.net, asp.net]
 products: [rider,resharper]
 topics: [data,web,editing,inspections]
 author: khalidabuhakmeh
-subtitle: Giving context to HTMX
+subtitle: Messages From the Other Side
 thumbnail: ./thumbnail.png
 longVideo:
 poster: ./thumbnail.png
