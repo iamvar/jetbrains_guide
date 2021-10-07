@@ -27,4 +27,4 @@ tutorialItems:
   - /tutorials/htmx-aspnetcore/real-world-shopping-cart/
 ---
 
-ASP.NET Core developer predominantly spend their development time on the server, trying their best to steer clear of the scary world of client-side development. But here's a secret, it doesn't have to be a daunting prospect to build client-side experiences with HTMX. Learn what HTMX is, how to integrate it with your existing knowledge of ASP.NET Core development, and how to take your client-side development to the next level with relative ease. You'll never look at client-side development the same way ever again.
+[ASP.NET](https://asp.net) Core developers predominantly spend their development time on the server, trying their best to steer clear of the scary world of client-side development. But here's a secret, it doesn't have to be a daunting prospect to build client-side experiences with HTMX. Learn what HTMX is, how to integrate it with your existing knowledge of ASP.NET Core development, and how to take your client-side development to the next level with relative ease. You'll never look at client-side development the same way ever again.
