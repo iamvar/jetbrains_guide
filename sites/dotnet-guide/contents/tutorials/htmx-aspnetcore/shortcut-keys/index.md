@@ -82,4 +82,4 @@ We've implemented this toast notification as a separate endpoint which calls an 
 
 While this sample scenario is simple, You can write HTMX triggers to fit some very complex designs, with the ability to trigger around visibility, mouse movements, key combos, timers, and custom events. In general, if you can imagine it, HTMX can trigger requests off of it.
 
-The following video will see a possible option for performing complex server-side form validation with a clientside feel.
+The following video will see a possible option for performing complex server-side form validation with a client-side feel.
