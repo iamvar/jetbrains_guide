@@ -37,7 +37,7 @@ Browsers have a pre-designated order of processing assets known as [The Critical
 
 These are just a subset of the normal issues developers may face when building web applications with modern web stacks. The solutions outlined solve these problems effectively, but, stepping back, we realize that many of the issues may be self-inflicted wounds.
 
-Taking a step-back from a particular technology stack, what do we want out of our web development experience? Well, if you're anything like me, you'll want following:
+Taking a step-back from a particular technology stack, what do we want out of our web development experience? Well, if you're anything like me, you'll want the following:
 
 1. An application that is fast to develop and faster to use.
 2. A reduction in payloads between the server and client.
