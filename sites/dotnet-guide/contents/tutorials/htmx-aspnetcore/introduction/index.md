@@ -29,11 +29,11 @@ We get the rise of build tools that can be difficult to get right, even for the 
 
 > JSON and JS Template payloads outpacing the size of the HTML it was meant to replace.
 
-With traditional JSON over HTTP, the payloads can seem wasteful when retrieving a large JSON payload when what we want is one field. GraphQL allows us to choose our payloads with surgical precision, but now our UI and Data services require clientside templating libraries. Keeping our data and UI usages in sync can introduce cognitive overhead that can be daunting. 
+With traditional JSON over HTTP, the payloads can seem wasteful when retrieving a large JSON payload when what we want is one field. GraphQL allows us to choose our payloads with surgical precision, but now our UI and Data services require client-side templating libraries. Keeping our data and UI usages in sync can introduce cognitive overhead that can be daunting. 
 
 > Slow client-side startup times and time to first interaction.
 
-Browsers have a pre-designated order of processing assets known as [The Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/constructing-the-object-model). JavaScript, especially clientside frameworks, can be slow to render because they work outside the optimized path of most clients. One approach to fix this has been to reintroduce static page rendering with enough HTML to give the perception of faster page startup times that will eventually light up with client-side functionality.
+Browsers have a pre-designated order of processing assets known as [The Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/constructing-the-object-model). JavaScript, especially client-side frameworks, can be slow to render because they work outside the optimized path of most clients. One approach to fix this has been to reintroduce static page rendering with enough HTML to give the perception of faster page startup times that will eventually light up with client-side functionality.
 
 These are just a subset of the normal issues developers may face when building web applications with modern web stacks. The solutions outlined solve these problems effectively, but, stepping back, we realize that many of the issues may be self-inflicted wounds.
 
@@ -45,4 +45,4 @@ Taking a step-back from a particular technology stack, what do we want out of ou
 4. Leverage our favorite server-side tech while leaning on the HTTP spec with all its capabilities.
 5. Finally, we want to have fun.
 
-As we go through this series, we'll see how we can reduce the complexity of our web applications, lean on existing ASP.NET Core knowledge, and focus on providing user experiences that delight you and your users. In the next section, we'll be [HTMX](https://htmx.org), a clientside library focused on HTML-over-the-wire.
+As we go through this series, we'll see how we can reduce the complexity of our web applications, lean on existing ASP.NET Core knowledge, and focus on providing user experiences that delight you and your users. In the next section, we'll be introducing [HTMX](https://htmx.org), a client-side library focused on HTML-over-the-wire.

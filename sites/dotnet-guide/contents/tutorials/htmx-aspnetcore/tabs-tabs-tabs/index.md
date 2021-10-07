@@ -15,7 +15,7 @@ url:
 
 Tabs are commonplace in most user interfaces, and you can indeed implement the pattern without HTMX. However, there are circumstances where it makes sense to reconsider implementing the UI pattern with HTMX. One instance is when each tab can have an enormous amount of information that your users do not always access. Hypothetically, why slow down the initial page load for 100% of users, by including a tab that only 1% of users access? 
 
-In this sample, you'll use HTMX to render only the tab the user has selected. Here we leverage the ideas of Hypermedia as the Engine of Application State, better known as HATEOAS. For those unsure of the acronym, HATEOAS is not a breakfast cereal, but a concept where the response contains the necessary information to convey state. In this particular example, the state of the selected tab is already in the HTML response. The selection is conveyed from the client to the server and used in the final response. Therefore, there is no need for any clientside code to determine the current active tab. 
+In this sample, you'll use HTMX to render only the tab the user has selected. Here we leverage the ideas of Hypermedia as the Engine of Application State, better known as HATEOAS. For those unsure of the acronym, HATEOAS is not a breakfast cereal, but a concept where the response contains the necessary information to convey state. In this particular example, the state of the selected tab is already in the HTML response. The selection is conveyed from the client to the server and used in the final response. Therefore, there is no need for any client-side code to determine the current active tab. 
 
 ![Active Tab Shown as First Tab](img.png)
 

@@ -5,7 +5,7 @@ technologies: [asp.net]
 topics: [web, ide]
 products: [rider,resharper]
 author: khalidabuhakmeh
-subtitle: A set of videos explaining what HTMX is, and how ASP.NET Core developers can use it to create clientside experiences.
+subtitle: A set of videos explaining what HTMX is, and how ASP.NET Core developers can use it to create client-side experiences.
 thumbnail: ./thumbnail.png
 tutorialItems:
   - /tutorials/htmx-aspnetcore/introduction/

@@ -32,7 +32,7 @@ HTMX.NET models its TagHelpers after the ASP.NET Core link helpers. So let's cha
    hx-target="#target"> Click Me </a>
 ```
 
-HTMX.NET recognizes the presence of any `hx-*` attribute and attempts to resolve a link only if the original value is empty. Using HTMX.NET, we can now generate links to endpoints, routes, controller, and Razor pages, all with the addition of a few HTML attributes. Remember, these attributes are processed server-side and should not appear clientside. This final output will be as expected, including one HTMX attribute with the correct URL value.
+HTMX.NET recognizes the presence of any `hx-*` attribute and attempts to resolve a link only if the original value is empty. Using HTMX.NET, we can now generate links to endpoints, routes, controller, and Razor pages, all with the addition of a few HTML attributes. Remember, these attributes are processed server-side and should not appear client-side. This final output will be as expected, including one HTMX attribute with the correct URL value.
 
 ```html
 <a hx-get="/12_TagHelpers">Click Me</a>
