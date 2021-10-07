@@ -38,6 +38,6 @@ The ternary approach allows for the same endpoint to fallback gracefully. A call
 
 When done correctly, clicking the button will now change the target element. 
 
-![completed hello world sample](complete.png)
+![A completed hello world sample with HTMX](complete.png)
 
 Congratulations! You're on your way to building HTMX and ASP.NET Core web applications. In the following video, let's see how to create a more complex sample with server-side state management.

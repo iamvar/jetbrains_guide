@@ -36,5 +36,3 @@ Well, we've made it! As ASP.NET Core developers, we now have another option for 
 But, did we learn everything about HTMX that there is? We absolutely did not; there's so much more to explore and learn about when working with HTMX. I recommend skimming through [the official HTMX documentation](https://htmx.org), [Hyperscript documentation](https://hyperscript.org) and joining [the HTMX community Discord](https://htmx.org/discord) to talk to other developers on their HTMX journey.
 
 Also, please reach out to me directly, [@buhakmeh](https://twitter.com/buhakmeh) if you have questions or need advice about HTMX, HTMX.NET, and ASP.NET Core.
-
-If you've enjoyed this content, please let me know on Twitter, and be sure to like and subscribe to JetBrainsTV.
