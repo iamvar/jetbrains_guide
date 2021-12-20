@@ -21,15 +21,15 @@ What if you could use your existing ASP.NET Core knowledge to build immersive cl
 
 As complex as the modern web may seem, most web applications rely on fundamentally the same behavior derived decades ago: a client initiates a request to a server, the server responds with a payload, and the client processes that information into a user interface. The `Request/Response` pattern is easy to understand, yet powerful enough to support most developer scenarios.
 
-As of producing this series, the trend in web development has been to do more processing on the client than ever before, with the client responsible for taking data, in the form of JSON, and HTML templates and materializing a user interface. In this approach, the server is a dispenser of JSON responses with no stake in the client experience outside of being fast and responsive to a client's data requests. While this approach works, like all trends, they begin to introduce their own set of issues.
+As of producing this series, the trend in web development has been to do more processing on the client than ever before, with the client responsible for taking data, in the form of JSON, and HTML templates and materializing a user interface. In this approach, the server is a dispenser of JSON responses with no stake in the client experience outside of being fast and responsive to a client's data requests. While this approach works, like all trends, they begin to introduce their own set of issues. For instance:
 
 > JavaScript files growing out of control, and slowing down page responsiveness.
 
-We get the rise of build tools that can be difficult to get right, even for the most skilled teams. With each new build tool promising to fix the issues of the last build tool.
+We get the rise of build tools that can be difficult to get right, even for the most skilled teams. With each new build tool promising to fix the issues of the last build tool. What about:
 
 > JSON and JS Template payloads outpacing the size of the HTML it was meant to replace.
 
-With traditional JSON over HTTP, the payloads can seem wasteful when retrieving a large JSON payload when what we want is one field. GraphQL allows us to choose our payloads with surgical precision, but now our UI and Data services require client-side templating libraries. Keeping our data and UI usages in sync can introduce cognitive overhead that can be daunting. 
+With traditional JSON over HTTP, the payloads can seem wasteful when retrieving a large JSON payload when all we want is one field. GraphQL allows us to choose our payloads with surgical precision, but now our UI and Data services require client-side templating libraries. Keeping our data and UI usages in sync can introduce cognitive overhead that can be daunting. And how about:
 
 > Slow client-side startup times and time to first interaction.
 
